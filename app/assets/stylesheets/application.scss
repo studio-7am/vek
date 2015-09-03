@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'bootstrap';
+ @import 'font-awesome';
+
+.container {
+	width: 1280px;
+	margin: auto;
+}
+
+.content {
+	width: 33%;
+	float: left;
+	min-height: 100px;
+}
+
+.page_tabs {
+	width: 33%;
+	float: left;
+	padding: 5px;
+}
+
+.page_cover {
+	img {
+		width: 100%;
+	}
+	width: 33%;
+	float: left;
+}
+

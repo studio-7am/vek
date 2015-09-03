@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :tabs
+  resources :pages
   get 'backend/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
