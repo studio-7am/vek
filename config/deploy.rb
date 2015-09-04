@@ -51,4 +51,31 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 
+  # Add this in config/deploy.rb
+  # and run 'cap production deploy:seed' to seed your database
+  desc 'Runs rake db:seed'
+  task :seed => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
+
+  # Add this in config/deploy.rb
+  # and run 'cap production deploy:create' to create your database
+  desc 'Runs rake db:create'
+  task :create => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:create"
+        end
+      end
+    end
+  end
+
+
 end
