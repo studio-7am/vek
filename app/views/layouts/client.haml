@@ -13,7 +13,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   %body
-    = yield
+    .row-fluid
+      .col-md-4.col-sm-4.col-xs-12.sidebar
+        = render 'client/sidebar'
+      .col-md-8.col-sm-8.col-xs-12.content  
+        = yield
     /[if lt IE 9]
       <script src="libs/html5shiv/es5-shim.min.js"></script>
       <script src="libs/html5shiv/html5shiv.min.js"></script>

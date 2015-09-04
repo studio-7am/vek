@@ -1,0 +1,23 @@
+= provide(:title, @page.title )
+%h1.page_heading.text-center= @page.title
+%section
+  %ul#f.nav.nav-tabs{:role => "tablist"}
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "", "data-toggle" => "tab", :href => "#home", :role => "tab"}
+        %i.fa.fa-home
+    - @page.tabs.each do |t|
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "", "data-toggle" => "tab", :href => "##{t.id}", :role => "tab"}
+          = t.title
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "", "data-toggle" => "tab", :href => "#order", :role => "tab"}
+        Заказать услугу
+  #j.tab-content
+    %br/
+    #home.tab-pane{:role => "tabpanel"}
+      = raw @page.content
+    - @page.tabs.each do |t|
+      .tab-pane{:id => "#{t.id}", :role => "tabpanel"}
+        = t.content
+    #order.tab-pane{:role => "tabpanel"}
+      Заказать услугу

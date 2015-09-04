@@ -1,0 +1,13 @@
+<div class="grid">
+  <% @pages.each do |p|%>
+  <figure class="effect-selena">
+  	<%= image_tag p.cover %>
+  	<figcaption>
+	  <h2><%= p.title %></h2>
+	  <%= link_to p, p %>
+	</figcaption>
+  </figure>
+<% end %>
+</div>		
+
+
