@@ -21,6 +21,8 @@ gem 'carrierwave'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'mini_magick'
 
+gem 'devise'
+
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use jquery as the JavaScript library
