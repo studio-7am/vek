@@ -1,0 +1,19 @@
+%p#notice= notice
+%h1 Список страниц на сайте
+= link_to 'Добавить страницу', new_backend_page_path, class: 'btn btn-primary'
+%br
+%br
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Заголовок
+      %th Описание страницы
+      %th{:colspan => "3"}
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td= page.title
+        %td= page.description
+        %td= link_to 'Редактировать', edit_backend_page_path(page), class: 'btn btn-info btn-block btn-xs'
+        %td= link_to 'Удалить', backend_page_path(page), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block btn-xs'

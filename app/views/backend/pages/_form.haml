@@ -1,0 +1,11 @@
+= simple_form_for([:backend, @page]) do |f|
+  = f.error_notification
+  .row
+    .col-md-6
+      = f.input :title, label: 'Заголовок страницы', placeholder: 'Например "Компьютерный сервис"'
+    .col-md-3
+      = f.input :cover, label: 'Обложка страницы'
+    .col-md-3
+      = f.button :submit, 'Сохранить', class: 'btn btn-block'
+  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }
+  .form-actions

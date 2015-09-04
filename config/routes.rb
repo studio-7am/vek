@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   root 'client#index'
 
   get 'backend' => 'backend#index'
   get 'client' => 'client#index'
+
+  namespace :backend do 
+    resources :pages
+    resources :tabs
+  end
 
   resources :pages
   resources :tabs
