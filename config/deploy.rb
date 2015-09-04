@@ -2,8 +2,7 @@
 lock '3.1.0'
 
 set :application, 'vek'
-set :repo_url, 'git@github.com:bensmth/vek-service.git'
-
+set :repo_url, 'git@github.com:bjsmth/vek-service.git'
 
 set :deploy_to, '/home/ben'
 
