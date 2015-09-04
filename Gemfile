@@ -18,8 +18,8 @@ gem 'haml'
 gem 'simple_form'
 gem 'simple_form-bootstrap'
 gem 'carrierwave'
-gem 'ckeditor'
-
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'mini_magick'
 
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.5'
