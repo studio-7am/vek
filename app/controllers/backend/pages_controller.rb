@@ -1,6 +1,7 @@
 class Backend::PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
-  
+
+  before_filter :authenticate if Rails.env.production?
 
   # GET /pages
   # GET /pages.json
