@@ -3,3 +3,4 @@ $(document).on "page:change", ->
   $('#j .tab-pane').first().addClass 'active'
 
 
+

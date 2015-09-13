@@ -54,7 +54,6 @@ body {
 
 .fixed {
         position: fixed;
-        min-height: 100%;
 }
 
 .sidebar {
@@ -266,4 +265,15 @@ figure.effect-selena:hover p {
           }
       }
    }
+}
+
+.fix {
+  position: absolute;
+  width: 100%;
+  z-index: 9000;
+  text-align: center;
+  background-color: #333;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 20px;
 }

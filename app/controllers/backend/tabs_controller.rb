@@ -28,7 +28,7 @@ class Backend::TabsController < ApplicationController
 
     respond_to do |format|
       if @tab.save
-        format.html { redirect_to @tab, notice: 'Tab was successfully created.' }
+        format.html { redirect_to backend_tabs_path, notice: 'Tab was successfully created.' }
         format.json { render :show, status: :created, location: @tab }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Backend::TabsController < ApplicationController
   def update
     respond_to do |format|
       if @tab.update(tab_params)
-        format.html { redirect_to @tab, notice: 'Tab was successfully updated.' }
+        format.html { redirect_to backend_tabs_path, notice: 'Tab was successfully updated.' }
         format.json { render :show, status: :ok, location: @tab }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Backend::TabsController < ApplicationController
   def destroy
     @tab.destroy
     respond_to do |format|
-      format.html { redirect_to tabs_url, notice: 'Tab was successfully destroyed.' }
+      format.html { redirect_to backend_tabs_path, notice: 'Tab was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

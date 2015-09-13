@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   namespace :backend do 
     resources :pages
     resources :tabs
+    resources :orders
   end
 
   resources :pages
   resources :tabs
 
-  resources :orders
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
