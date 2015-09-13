@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @lombard_tab.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @lombard_tab.content %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @lombard_tab.icon %>
+</p>
+
+<p>
+  <strong>Lombard:</strong>
+  <%= @lombard_tab.lombard %>
+</p>
+
+<%= link_to 'Edit', edit_lombard_tab_path(@lombard_tab) %> |
+<%= link_to 'Back', lombard_tabs_path %>

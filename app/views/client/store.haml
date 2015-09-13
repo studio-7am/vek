@@ -2,3 +2,19 @@
 %h1.page_heading.text-center
   Магазин
 %section
+  %ul#f.nav.nav-tabs{:role => "tablist"}
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "", "data-toggle" => "tab", :href => "#home", :role => "tab"}
+        %i.fa.fa-home
+    - @store.store_tabs.each do |t|
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "", "data-toggle" => "tab", :href => "##{t.id}", :role => "tab"}
+          = t.title
+  #j.tab-content
+    %br/
+    #home.tab-pane{:role => "tabpanel"}
+      = raw @store.content
+    - @store.store_tabs.each do |t|
+      .tab-pane{:id => "#{t.id}", :role => "tabpanel"}
+        = raw t.content
+    #order.tab-pane{:role => "tabpanel"}

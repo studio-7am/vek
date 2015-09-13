@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @store_tab.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @store_tab.content %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @store_tab.icon %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @store_tab.store %>
+</p>
+
+<%= link_to 'Edit', edit_store_tab_path(@store_tab) %> |
+<%= link_to 'Back', store_tabs_path %>

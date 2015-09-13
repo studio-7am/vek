@@ -10,6 +10,7 @@ class ClientController < ApplicationController
   end
 
   def lombard
+  	@lombard_order = LombardOrder.new
   end
 
 

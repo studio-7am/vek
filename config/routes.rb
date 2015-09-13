@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :products
+  resources :lombard_orders
+  resources :store_tabs
+  resources :lombard_tabs
   resources :stores
   resources :lombards
   devise_for :users

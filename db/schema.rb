@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913082446) do
+ActiveRecord::Schema.define(version: 20150913085750) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -28,6 +28,30 @@ ActiveRecord::Schema.define(version: 20150913082446) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "lombard_orders", force: :cascade do |t|
+    t.string   "number"
+    t.string   "slug"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "lombard_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lombard_orders", ["lombard_id"], name: "index_lombard_orders_on_lombard_id"
+
+  create_table "lombard_tabs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "icon"
+    t.integer  "lombard_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lombard_tabs", ["lombard_id"], name: "index_lombard_tabs_on_lombard_id"
 
   create_table "lombards", force: :cascade do |t|
     t.string   "name",        default: "Ломбард"
@@ -64,13 +88,36 @@ ActiveRecord::Schema.define(version: 20150913082446) do
     t.datetime "updated_at",                                  null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "price"
+    t.string   "image"
+    t.integer  "lombard_order_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "products", ["lombard_order_id"], name: "index_products_on_lombard_order_id"
+
+  create_table "store_tabs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "icon"
+    t.integer  "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "store_tabs", ["store_id"], name: "index_store_tabs_on_store_id"
+
   create_table "stores", force: :cascade do |t|
     t.string   "name",        default: "Магазин"
     t.string   "description", default: "Описание магазина"
-    t.string   "content"
+    t.string   "content",     default: "Контент в магазине"
     t.string   "image",       default: "/store.jpg"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   create_table "tabs", force: :cascade do |t|

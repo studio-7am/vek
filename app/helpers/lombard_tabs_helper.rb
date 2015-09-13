@@ -1,0 +1,2 @@
+module LombardTabsHelper
+end
