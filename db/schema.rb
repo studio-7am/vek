@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904122614) do
+ActiveRecord::Schema.define(version: 20150913082446) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20150904122614) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "lombards", force: :cascade do |t|
+    t.string   "name",        default: "Ломбард"
+    t.string   "description", default: "Описание ломбарда"
+    t.string   "content",     default: "Контент в ломбарде"
+    t.string   "image",       default: "/lombard.jpg"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string   "number"
@@ -53,6 +62,15 @@ ActiveRecord::Schema.define(version: 20150904122614) do
     t.string   "bg",          default: "#fafafa"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string   "name",        default: "Магазин"
+    t.string   "description", default: "Описание магазина"
+    t.string   "content"
+    t.string   "image",       default: "/store.jpg"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "tabs", force: :cascade do |t|

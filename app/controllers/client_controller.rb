@@ -9,5 +9,8 @@ class ClientController < ApplicationController
   def index
   end
 
+  def lombard
+  end
+
 
 end

@@ -3,4 +3,9 @@ class BackendController < ApplicationController
   
   def index
   end
+
+  def lombard_settings
+     
+  end
+
 end

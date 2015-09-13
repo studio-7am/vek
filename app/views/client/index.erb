@@ -1,4 +1,21 @@
 <div class="grid">
+
+  <figure class="effect-selena">
+  	<%= image_tag @lombard.image %>
+  	<figcaption>
+	  <h2><%= @lombard.name %></h2>
+	  <a href="/lombard"></a>
+	</figcaption>
+  </figure>
+
+  <figure class="effect-selena">
+    <%= image_tag @store.image %>
+    <figcaption>
+    <h2><%= @store.name %></h2>
+    <a href="/store"></a>
+  </figcaption>
+  </figure>
+
   <% @pages.each do |p|%>
   <figure class="effect-selena">
   	<%= image_tag p.cover %>

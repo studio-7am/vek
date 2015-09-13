@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lombards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Content</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lombards.each do |lombard| %>
+      <tr>
+        <td><%= lombard.name %></td>
+        <td><%= lombard.description %></td>
+        <td><%= lombard.content %></td>
+        <td><%= lombard.image %></td>
+        <td><%= link_to 'Show', lombard %></td>
+        <td><%= link_to 'Edit', edit_lombard_path(lombard) %></td>
+        <td><%= link_to 'Destroy', lombard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lombard', new_lombard_path %>

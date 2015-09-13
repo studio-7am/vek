@@ -1,0 +1,2 @@
+module LombardsHelper
+end

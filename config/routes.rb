@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
+  resources :stores
+  resources :lombards
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   root 'client#index'
 
   get 'backend' => 'backend#index'
   get 'client' => 'client#index'
+
+  get 'lombard' => 'client#lombard'
+  get 'store' => 'client#store'
+
+  get 'lombard_settings' => 'backend#lombard_settings', as: 'l_settings'
+  get 'store_settings' => 'backend#store_settings', as: 's_settings'
 
   namespace :backend do 
     resources :pages
