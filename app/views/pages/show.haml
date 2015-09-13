@@ -18,6 +18,7 @@
       = raw @page.content
     - @page.tabs.each do |t|
       .tab-pane{:id => "#{t.id}", :role => "tabpanel"}
-        = t.content
+        = raw t.content
     #order.tab-pane{:role => "tabpanel"}
       Заказать услугу
+      = render 'order'

@@ -1,8 +1,6 @@
 class Backend::PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate if Rails.env.production?
-
   # GET /pages
   # GET /pages.json
   def index
@@ -31,7 +29,7 @@ class Backend::PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to backend_pages_path + '/' + @page.id.to_s, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :created, location: @page }
       else
         format.html { render :new }
@@ -45,7 +43,7 @@ class Backend::PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to backend_pages_path + '/' + @page.id.to_s, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
       else
         format.html { render :edit }
@@ -59,7 +57,7 @@ class Backend::PagesController < ApplicationController
   def destroy
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
+      format.html { redirect_to backend_pages_url, notice: 'Page was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

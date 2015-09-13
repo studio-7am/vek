@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @tab.title
+%p
+  %strong Content:
+  = @tab.content
+%p
+  %strong Page:
+  = @tab.page
+= link_to 'Edit', edit_tab_path(@tab)
+|
+= link_to 'Back', tabs_path
