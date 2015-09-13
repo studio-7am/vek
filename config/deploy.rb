@@ -39,13 +39,43 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-
 namespace :deploy do
-  desc 'restart upstart service for vek'
-  task :upstart do
-    on roles(:all) do 
-      execute :sudo, 'restart vek'
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
+
+  after :publishing, 'deploy:restart'
+  after :finishing, 'deploy:cleanup'
+
+  # Add this in config/deploy.rb
+  # and run 'cap production deploy:seed' to seed your database
+  desc 'Runs rake db:seed'
+  task :seed => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
+
+  # Add this in config/deploy.rb
+  # and run 'cap production deploy:create' to create your database
+  desc 'Runs rake db:create'
+  task :create => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:create"
+        end
+      end
+    end
+  end
+
+
 end
-after 'deploy:publishing', 'deploy:upstart'

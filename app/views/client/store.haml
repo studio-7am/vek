@@ -1,6 +1,41 @@
 = provide(:title, 'Магазин' )
 %h1.page_heading.text-center
   Магазин
+
+
+%section
+  .row
+  - @products.each do |p|
+    .col-md-6
+      .thumbnail
+        %a{:href => "#", "data-target" => "##{p.id}", "data-toggle" => "modal"}
+          = image_tag p.image, class: 'img-responsive'
+        %h4
+          = p.name
+        %p
+          %b
+            = p.price 
+            Руб.
+
+    .modal.fade{"aria-labelledby" => "myModalLabel", :id => "#{p.id}", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog.modal-lg{:role => "document"}
+        .modal-content
+          .modal-header
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            %h4#myModalLabel.modal-title 
+              = p.name
+          .modal-body
+            .row
+              .col-md-4
+                = image_tag p.image, class: 'img-responsive'
+              .col-md-8
+                .wdth
+                  = raw p.description
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Закрыть
+            = link_to "Купить", new_store_order_path(:product_id => p.id), class: 'btn btn-default'
+
 %section
   %ul#f.nav.nav-tabs{:role => "tablist"}
     %li{:role => "presentation"}

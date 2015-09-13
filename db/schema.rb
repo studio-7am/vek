@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913085750) do
+ActiveRecord::Schema.define(version: 20150913112936) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -99,6 +99,19 @@ ActiveRecord::Schema.define(version: 20150913085750) do
   end
 
   add_index "products", ["lombard_order_id"], name: "index_products_on_lombard_order_id"
+
+  create_table "store_orders", force: :cascade do |t|
+    t.string   "number"
+    t.string   "slug"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "store_orders", ["product_id"], name: "index_store_orders_on_product_id"
 
   create_table "store_tabs", force: :cascade do |t|
     t.string   "title"

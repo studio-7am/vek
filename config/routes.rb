@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :products
-  resources :lombard_orders
+  resources :store_orders
   resources :store_tabs
   resources :lombard_tabs
   resources :stores
@@ -23,6 +22,9 @@ Rails.application.routes.draw do
     resources :pages
     resources :tabs
     resources :orders
+    resources :lombard_orders
+    resources :store_orders
+    resources :products
   end
 
   resources :pages

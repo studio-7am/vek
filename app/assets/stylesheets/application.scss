@@ -24,6 +24,12 @@ body {
   padding: 0;
 }
 
+.menu_left {
+  a {
+    font-size: 13px;
+  }
+}
+
 .content {
   padding: 0;
   section {
@@ -276,4 +282,8 @@ figure.effect-selena:hover p {
   color: #fafafa;
   font-weight: bold;
   font-size: 20px;
+}
+
+.wdth {
+  width: 100%;
 }

@@ -13,5 +13,9 @@ class ClientController < ApplicationController
   	@lombard_order = LombardOrder.new
   end
 
+  def store
+    @products = Product.all.where(lombard_order: nil)
+  end
+
 
 end

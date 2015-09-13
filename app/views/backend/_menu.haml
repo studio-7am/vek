@@ -11,11 +11,11 @@
     Контент
   .list-group
     %a.list-group-item{:href => '/backend/pages'} 
-      %i.fa.fa-fw.fa-inbox 
+      %i.fa.fa-fw.fa-file-text-o 
       Страницы 
   .list-group
     %a.list-group-item{:href => '/backend/tabs'} 
-      %i.fa.fa-fw.fa-inbox 
+      %i.fa.fa-fw.fa-columns 
       Табы на страницах
 
 .panel.panel-default.menu_left
@@ -33,9 +33,29 @@
     Ломбард
   .list-group
     %a.list-group-item{:href => '/lombard_settings'} 
-      %i.fa.fa-fw.fa-inbox 
+      %i.fa.fa-fw.fa-cog 
       Настроить
   .list-group
-    %a.list-group-item{:href => '/backend/orders'} 
+    %a.list-group-item{:href => '/backend/lombard_orders'} 
       %i.fa.fa-fw.fa-inbox 
       Заявки с ломбарда
+
+.panel.panel-default.menu_left
+  .panel-heading
+    %i.fa.fa-fw.fa-bookmark-o
+    Магазин
+  .list-group
+    %a.list-group-item{:href => '/store_settings'} 
+      %i.fa.fa-fw.fa-cog 
+      Настроить
+  .list-group
+    %a.list-group-item{:href => '/backend/products'} 
+      %i.fa.fa-fw.fa-inbox 
+      Товары в магазине      
+  .list-group
+    %a.list-group-item{:href => '/backend/store_orders'} 
+      %i.fa.fa-fw.fa-inbox 
+      Заказы в магазине      
+
+
+

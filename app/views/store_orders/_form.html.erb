@@ -1,12 +1,10 @@
-<%= simple_form_for(@lombard_order) do |f| %>
+<%= simple_form_for(@store_order) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :number %>
-    <%= f.input :slug %>
     <%= f.input :name %>
     <%= f.input :phone %>
-    <%= f.input :email %>
+    <%= f.hidden_field :product_id, value: @product.id %>
   </div>
 
   <div class="form-actions">

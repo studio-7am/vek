@@ -1,14 +1,25 @@
+<%= provide(:title, 'Настроить ломбард' ) %>
+
+
 <%= simple_form_for(@lombard) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :content %>
-    <%= f.input :image %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :name %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :description %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :image %>
+    </div>
+    <div class="col-md-12">
+      <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} } %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Применить' %>
   </div>
 <% end %>

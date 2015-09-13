@@ -21,6 +21,8 @@ gem 'carrierwave'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'mini_magick'
 
+gem "cocoon"
+
 gem 'devise'
 
 gem "font-awesome-rails"

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lombard Orders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lombard_orders.each do |lombard_order| %>
+      <tr>
+        <td><%= lombard_order.number %></td>
+        <td><%= lombard_order.phone %></td>
+        <td><%= link_to 'Открыть', backend_lombard_order_path(lombard_order), class: 'btn btn-info btn-block btn-xs' %></td>
+        <td><%= link_to 'Удалить', backend_lombard_order_path(lombard_order), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

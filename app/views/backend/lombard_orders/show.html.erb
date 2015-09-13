@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @lombard_order.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lombard_order.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lombard_order.email %>
+</p>
+
+<%= @lombard_order.products.as_json %>
+

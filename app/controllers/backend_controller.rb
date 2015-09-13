@@ -8,4 +8,7 @@ class BackendController < ApplicationController
      
   end
 
+  def store_settings
+  end
+
 end
