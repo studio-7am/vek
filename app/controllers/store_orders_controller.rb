@@ -29,7 +29,7 @@ class StoreOrdersController < ApplicationController
 
     respond_to do |format|
       if @store_order.save
-        format.html { redirect_to @store_order, notice: 'Store order was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Ваша заявка принята. Ожидайте звонка оператора.' }
         format.json { render :show, status: :created, location: @store_order }
       else
         format.html { render :new }

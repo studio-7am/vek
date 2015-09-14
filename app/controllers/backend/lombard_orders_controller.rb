@@ -29,7 +29,7 @@ class Backend::LombardOrdersController < ApplicationController
 
     respond_to do |format|
       if @lombard_order.save
-        format.html { redirect_to root_path, notice: 'Lombard order was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Заявка создана. Мы скоро свяжемся с вами.' }
         format.json { render :show, status: :created, location: @lombard_order }
       else
         format.html { render :new }

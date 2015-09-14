@@ -16,5 +16,6 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require cocoon
+//= require abracadabra
 //= require_tree .
 

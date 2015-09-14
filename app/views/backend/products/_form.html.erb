@@ -3,17 +3,17 @@
 
   <div class="row">
     <div class="col-md-6">
-      <%= f.input :name %>
+      <%= f.input :name, label: 'Название товара' %>
     </div>
     <div class="col-md-3">
-      <%= f.input :price %>
+      <%= f.input :price, label: 'Цена' %>
     </div>
     <div class="col-md-3">
-      <%= f.input :image %>
+      <%= f.input :image, label: 'Изображение' %>
     </div>
     <div class="col-md-12">
 
-    <%= f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }%>
+    <%= f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }, label: 'Контент'%>
 
     </div>
   

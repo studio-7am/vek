@@ -43,7 +43,7 @@ class Backend::PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to backend_pages_path + '/' + @page.id.to_s, notice: 'Page was successfully updated.' }
+        format.html { redirect_to backend_pages_path + '/' + @page.id.to_s, notice: 'Страница создана.' }
         format.json { render :show, status: :ok, location: @page }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class Backend::PagesController < ApplicationController
   def destroy
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to backend_pages_url, notice: 'Page was successfully destroyed.' }
+      format.html { redirect_to backend_pages_url, notice: 'Страница удалена.' }
       format.json { head :no_content }
     end
   end

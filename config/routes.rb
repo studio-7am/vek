@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :socials
+  resources :socials
   resources :store_orders
   resources :store_tabs
   resources :lombard_tabs

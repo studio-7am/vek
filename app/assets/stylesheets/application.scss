@@ -17,6 +17,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,500italic,700,700italic,900,900italic&subset=latin,cyrillic);
 @import 'bootstrap';
 @import 'font-awesome';
+ @import "abracadabra-scss";
 
 body {
   background-color: #fff;
@@ -286,4 +287,17 @@ figure.effect-selena:hover p {
 
 .wdth {
   width: 100%;
+}
+
+.nav-tabs {
+  li {
+    a {
+      color: #333;
+      font-weight: bold;
+    }
+  }
+}
+
+.products_section {
+    max-height: 500px;
 }

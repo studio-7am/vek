@@ -9,14 +9,10 @@
 .map.hidden-xs
   %img.img-responsive{:src => "/map.png"}
 .sidebar_icons.hidden-xs
-  %a{:href => "/"}
-    %i.fa.fa-twitter-square.fa-large
-  %a{:href => "/"}
-    %i.fa.fa-facebook-official{:href => "/"}
-  %a{:href => "/"}
-    %i.fa.fa-instagram{:href => "/"}
-  %a{:href => "/"}
-    %i.fa.fa-odnoklassniki-square{:href => "/"}  
+  - @icons.each do |i|
+    %a{:href => "#{i.url}"}
+      %i{:class => "#{i.icon}"}
+
 .sidebar_footer.hidden-xs 
   %p 2015 Компания ВЕК | Сделано в 7 утра
 

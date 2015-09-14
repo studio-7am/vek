@@ -4,7 +4,7 @@ class Backend::ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.where(lombard_order: nil)
+      @products = Product.all
   end
 
   # GET /products/1

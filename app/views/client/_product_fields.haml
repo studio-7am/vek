@@ -1,3 +1,4 @@
 .nested-fields
-  = f.input :name
-  = link_to_remove_association "remove product", f
+  = f.input :name, label: 'Название товара'
+  = f.input :image, label: 'Изображение'
+  = link_to_remove_association "Удалить товар", f

@@ -5,13 +5,13 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :name %>
+      <%= f.input :name, label: 'Название' %>
     </div>
     <div class="col-md-4">
-      <%= f.input :description %>
+      <%= f.input :description, label: 'Описание' %>
     </div>
     <div class="col-md-4">
-      <%= f.input :image %>
+      <%= f.input :image, label: 'Обложка для меню' %>
     </div>
     <div class="col-md-12">
       <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} } %>

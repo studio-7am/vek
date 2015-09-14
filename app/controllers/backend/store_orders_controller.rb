@@ -57,7 +57,7 @@ class Backend::StoreOrdersController < ApplicationController
   def destroy
     @store_order.destroy
     respond_to do |format|
-      format.html { redirect_to store_orders_url, notice: 'Store order was successfully destroyed.' }
+      format.html { redirect_to backend_store_orders_path, notice: 'Store order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

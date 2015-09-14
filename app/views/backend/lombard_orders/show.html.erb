@@ -1,10 +1,10 @@
 <p>
-  <strong>Name:</strong>
+  <strong>Имя:</strong>
   <%= @lombard_order.name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Телефон:</strong>
   <%= @lombard_order.phone %>
 </p>
 
@@ -13,5 +13,13 @@
   <%= @lombard_order.email %>
 </p>
 
-<%= @lombard_order.products.as_json %>
+<h3>Товары в заявке</h3>
+
+<% @lombard_order.products.each do |p|%>
+
+    <h5><%= p.name %></h5>
+    <%= image_tag p.image, style: 'width: 300px;' %>
+
+<% end %>
+
 

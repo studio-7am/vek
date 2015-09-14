@@ -7,6 +7,18 @@ class ApplicationController < ActionController::Base
 
     before_action :set_lombard
     before_action :set_store
+    before_action :set_social
+
+    def set_social
+      if Social.all.count === 0
+        Social.create("name": "Twitter", "icon": "fa fa-twitter-square fa-large", "url": "#")
+        Social.create("name": "Facebook", "icon": "fa fa-facebook-official", "url": "#")
+        Social.create("name": "Instagram", "icon": "fa fa-instagram", "url": "#")
+        Social.create("name": "Odnoklassniki", "icon": "fa fa-odnoklassniki-square", "url": "#")
+      else
+        @icons = Social.all
+      end
+    end
 
     def set_lombard
       if Lombard.all.count === 0 

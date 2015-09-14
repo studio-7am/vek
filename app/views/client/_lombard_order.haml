@@ -1,10 +1,11 @@
 = simple_form_for [:backend, @lombard_order] do |f|
-  = f.input :name
-  = f.input :phone
-  %h3 Products
+  = f.input :name, label: 'Ваше имя'
+  = f.input :phone, label: 'Номер для связи'
+  %h3 Товары в заявке
   #tasks
     = f.simple_fields_for :products do |product|
       = render 'product_fields', f: product
     .links
-      = link_to_add_association 'add product', f, :products
-  = f.submit
+      = link_to_add_association 'Добавить товар', f, :products
+  %br
+  = f.submit 'Отправить заявку', class: 'btn btn-primary'

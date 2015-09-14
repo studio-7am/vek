@@ -1,1 +1,24 @@
 <a href="/" target="_blank">На сайт</a>
+
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Icon</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socials.each do |social| %>
+      <tr>
+      	<td><%= click_to_edit social, path: social_path(social), attribute: :name %></td>
+      	<td><%= click_to_edit social, path: social_path(social), attribute: :icon %></td>
+      	<td><%= click_to_edit social, path: social_path(social), attribute: :url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
