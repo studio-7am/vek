@@ -61,6 +61,7 @@ body {
 
 .fixed {
         position: fixed;
+        height: 100%;
 }
 
 .sidebar {
@@ -300,4 +301,13 @@ figure.effect-selena:hover p {
 
 .products_section {
     max-height: 500px;
+}
+
+.mobile_nav {
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+    img {
+      width: 80px !important;
+    }
 }
