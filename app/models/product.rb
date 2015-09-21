@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
-  belongs_to :store_order
+  has_many :store_orders
   mount_uploader :image, ProductUploader
 end

@@ -14,7 +14,7 @@ class ClientController < ApplicationController
   end
 
   def store
-    @products = Product.all
+    @products = Product.all.where(:lombard_order_id => nil)
   end
 
 
