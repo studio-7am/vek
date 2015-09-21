@@ -1,6 +1,7 @@
 class Backend::LombardOrdersController < ApplicationController
   before_action :set_lombard_order, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate if Rails.env.production?
+  
   # GET /lombard_orders
   # GET /lombard_orders.json
   def index

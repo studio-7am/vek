@@ -1,5 +1,6 @@
 class Backend::TabsController < ApplicationController
   before_action :set_tab, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate if Rails.env.production?
 
   # GET /tabs
   # GET /tabs.json

@@ -1,5 +1,7 @@
 class Backend::StoreOrdersController < ApplicationController
   before_action :set_store_order, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate if Rails.env.production?
+  
   layout 'client', only: :new
   # GET /store_orders
   # GET /store_orders.json
