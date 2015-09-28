@@ -4,7 +4,7 @@ lock '3.1.0'
 set :application, 'vek'
 set :repo_url, 'git@github.com:bjsmth/vek-service.git'
 
-set :deploy_to, '/home/ben'
+set :deploy_to, '/home/vekapp'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
