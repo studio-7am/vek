@@ -1,0 +1,10 @@
+= simple_form_for(@store_tab) do |f|
+  = f.error_notification
+  .row
+    .col-md-4
+      = f.input :title, label: 'Заголовок таба', placeholder: 'Этот таб будет показан в ломбарде'
+    .col-md-6
+    .col-md-2
+      = f.button :submit, 'Сохранить', class: 'btn btn-block'
+  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }
+  .form-actions

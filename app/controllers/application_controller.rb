@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     end
 
     def set_lombard
+      
+      @lombard_tabs = LombardTab.all
+      @store_tabs = StoreTab.all
+
       if Lombard.all.count === 0 
       	Lombard.create
       else

@@ -28,7 +28,7 @@ class StoreTabsController < ApplicationController
 
     respond_to do |format|
       if @store_tab.save
-        format.html { redirect_to @store_tab, notice: 'Store tab was successfully created.' }
+        format.html { redirect_to store_tabs_url, notice: 'Store tab was successfully created.' }
         format.json { render :show, status: :created, location: @store_tab }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StoreTabsController < ApplicationController
   def update
     respond_to do |format|
       if @store_tab.update(store_tab_params)
-        format.html { redirect_to @store_tab, notice: 'Store tab was successfully updated.' }
+        format.html { redirect_to store_tabs_url, notice: 'Store tab was successfully updated.' }
         format.json { render :show, status: :ok, location: @store_tab }
       else
         format.html { render :edit }

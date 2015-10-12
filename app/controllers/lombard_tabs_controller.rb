@@ -1,6 +1,7 @@
 class LombardTabsController < ApplicationController
   before_action :set_lombard_tab, only: [:show, :edit, :update, :destroy]
 
+
   # GET /lombard_tabs
   # GET /lombard_tabs.json
   def index
@@ -28,7 +29,7 @@ class LombardTabsController < ApplicationController
 
     respond_to do |format|
       if @lombard_tab.save
-        format.html { redirect_to @lombard_tab, notice: 'Lombard tab was successfully created.' }
+        format.html { redirect_to lombard_tabs_url, notice: 'Таб в ломбарде создан.' }
         format.json { render :show, status: :created, location: @lombard_tab }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class LombardTabsController < ApplicationController
   def update
     respond_to do |format|
       if @lombard_tab.update(lombard_tab_params)
-        format.html { redirect_to @lombard_tab, notice: 'Lombard tab was successfully updated.' }
+        format.html { redirect_to lombard_tabs_url, notice: 'Таб в ломбарде обновлен.'}
         format.json { render :show, status: :ok, location: @lombard_tab }
       else
         format.html { render :edit }
