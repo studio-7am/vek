@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:bjsmth/vek-service.git'
 set :deploy_to, '/home/rails/vek'
 
 set :linked_files, %w{config/database.yml db/production.sqlite3}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle}
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
