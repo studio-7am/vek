@@ -18,9 +18,10 @@ gem 'haml'
 gem 'simple_form'
 gem 'simple_form-bootstrap'
 gem 'carrierwave'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+#gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'mini_magick'
 gem 'abracadabra'
+gem 'redactor-rails'
 
 gem "cocoon"
 

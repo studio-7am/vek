@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RedactorRails::Engine => '/redactor_rails'
   resources :socials
   resources :socials
   resources :store_orders
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   resources :stores
   resources :lombards
   devise_for :users
-  mount Ckeditor::Engine => '/ckeditor'
+
   root 'client#index'
 
   get 'backend' => 'backend#index'

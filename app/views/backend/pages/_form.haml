@@ -7,5 +7,7 @@
       = f.input :cover, label: 'Обложка страницы'
     .col-md-2
       = f.button :submit, 'Сохранить', class: 'btn btn-block'
-  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }
+
+  = f.input :content, label: 'Your label', :as => :text, :input_html => { :class => "redactor" }
+
   .form-actions
