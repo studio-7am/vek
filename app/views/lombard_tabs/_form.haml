@@ -6,5 +6,5 @@
     .col-md-6
     .col-md-2
       = f.button :submit, 'Сохранить', class: 'btn btn-block'
-  = f.input :content, label: 'Your label', :as => :text, :input_html => { :class => "redactor" }
+  =  f.input :content, as: :bootsy, input_html: {:style => "min-height: 300px" } 
   .form-actions

@@ -69,6 +69,6 @@ class LombardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lombard_params
-      params.require(:lombard).permit(:name, :description, :content, :image)
+      params.require(:lombard).permit(:name, :description, :content, :image, :bootsy_image_gallery_id)
     end
 end

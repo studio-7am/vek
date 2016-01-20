@@ -6,7 +6,6 @@ class BackendController < ApplicationController
   end
 
   def lombard_settings
-     
   end
 
   def store_settings

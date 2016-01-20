@@ -69,6 +69,6 @@ class StoreTabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_tab_params
-      params.require(:store_tab).permit(:title, :content, :icon, :store_id)
+      params.require(:store_tab).permit(:title, :content, :icon, :store_id, :bootsy_image_gallery_id)
     end
 end

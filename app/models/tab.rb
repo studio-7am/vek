@@ -3,4 +3,5 @@ class Tab < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   validates :page, presence: true
+  include Bootsy::Container
 end

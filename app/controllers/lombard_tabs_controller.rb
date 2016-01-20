@@ -70,6 +70,6 @@ class LombardTabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lombard_tab_params
-      params.require(:lombard_tab).permit(:title, :content, :icon, :lombard_id)
+      params.require(:lombard_tab).permit(:title, :content, :icon, :lombard_id, :bootsy_image_gallery_id)
     end
 end

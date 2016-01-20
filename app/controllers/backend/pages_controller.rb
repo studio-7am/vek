@@ -71,6 +71,6 @@ class Backend::PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :description, :content, :publish, :cover, :icon, :bg)
+      params.require(:page).permit(:title, :description, :content, :publish, :cover, :icon, :bg, :bootsy_image_gallery_id)
     end
 end
