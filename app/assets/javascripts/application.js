@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootsy
 //= require turbolinks
 //= require bootstrap
-//= require redactor-rails
 //= require cocoon
 //= require abracadabra
 //= require_tree .

@@ -56,6 +56,10 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootsy (2.2.1)
+      carrierwave (~> 0.10)
+      mini_magick (~> 4.3)
+      remotipart (~> 1.2)
     builder (3.2.2)
     byebug (6.0.2)
     capistrano (3.4.0)
@@ -155,6 +159,7 @@ GEM
       devise
       mime-types
       orm_adapter
+    remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     sass (3.4.18)
@@ -212,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   abracadabra
   bootstrap-sass (~> 3.3.5)
+  bootsy
   byebug
   capistrano (~> 3.4.0)
   capistrano-bundler (~> 1.1.2)

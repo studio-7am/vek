@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'abracadabra'
 gem 'redactor-rails'
+gem 'bootsy'
 
 gem "cocoon"
 

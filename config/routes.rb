@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   mount RedactorRails::Engine => '/redactor_rails'
   resources :socials
   resources :socials
